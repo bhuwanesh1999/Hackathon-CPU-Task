@@ -23,11 +23,11 @@ class Main {
                 double current = Double.parseDouble (  String.format (  "%.2f", Double.parseDouble ( arr[8] )));
                 if(current > maxCpu ) maxCpu = current;
                 total+=current;
-                values.put ( (++count)+"s",arr[9] );
+                values.put ( (++count)+"s",current);
             }
             valuesObject.put("values",values);
-            valuesObject.put ( "maxcpu",String.valueOf ( maxCpu ) );
-            valuesObject.put ( "avgcpu",String.valueOf ( (maxCpu/count) ) );
+            valuesObject.put ( "maxcpu",maxCpu );
+            valuesObject.put ( "avgcpu",(maxCpu/count) );
             transactionObject.put("transaction",valuesObject);
             json.add(transactionObject);
             System.out.println(json);
